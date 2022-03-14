@@ -30,7 +30,7 @@ function even(num){
 // inizio funzione per: il numero è dispari?
 function odd(num){
     if (num % 2 !== 0){
-        return 'even';
+        return 'odd';
     }
 }
 // fine funzione per: il numero è dispari?
