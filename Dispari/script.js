@@ -6,8 +6,6 @@ Sommiamo i due numeri
 Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto. */
 
-
-
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 function generaNumeroRandom(min, max){
 
@@ -19,33 +17,26 @@ function generaNumeroRandom(min, max){
 // fine funzione numero randomico 
 
 
-// inizio funzione per: il numero è pari?
+
+// inizio funzione per: il numero è pari o dispari?
 function even(num){
-    if (num % 2 === 0){
-        return 'even';
-    }
+    const isEven = (num % 2 === 0);
+    return isEven;
+    // if (num % 2 !== 0){
+    //     return true;
+    // }else{
+    //     return false;
+    // }
+    
 }
-// fine funzione per: il numero è pari?
+// fine funzione per: il numero è pari o dispari?
 
-// inizio funzione per: il numero è dispari?
-function odd(num){
-    if (num % 2 !== 0){
-        return 'odd';
-    }
-}
-// fine funzione per: il numero è dispari?
-
-
-
-
-
-
+// inizio pari
 let somma = 0;
 
 const buttonPari = document.querySelector ('.pari');
 
-buttonPari.addEventListener("click", function(){
-
+function clickPari(){
     userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'))  // numero scelto dall'utente
     console.log('il tuo numero è ' + userNumber);                  // numero scelto dall'utente
 
@@ -54,22 +45,26 @@ buttonPari.addEventListener("click", function(){
     console.log('il numero del computer è ' + cpuNumber);          // numero randomico per cpu
     
 
-    somma = userNumber + cpuNumber;                               // somma tra cpu e user    
-    console.log('la somma è ' + somma);                           // somma tra cpu e user 
+    somma = userNumber + cpuNumber;                                // somma tra cpu e user    
+    console.log('la somma è ' + somma);                            // somma tra cpu e user 
 
-    if (even(somma)){
+
+    let isEven = even(somma);
+    if (isEven){
         console.log('Il numero è pari, hai vinto!')
     }else{
         console.log('Mi dispiace, hai perso :-(')
     }
+}
 
-})
+buttonPari.addEventListener("click", clickPari);
+// fine pari
 
 
-
+// inizio dispari
 const buttonDispari = document.querySelector ('.dispari');
 
-buttonDispari.addEventListener("click", function(){
+function clickDispari (){
 
     userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'))  // numero scelto dall'utente
     console.log('il tuo numero è ' + userNumber);                  // numero scelto dall'utente
@@ -82,10 +77,15 @@ buttonDispari.addEventListener("click", function(){
     somma = userNumber + cpuNumber;                               // somma tra cpu e user    
     console.log('la somma è ' + somma);                           // somma tra cpu e user 
 
-    if (odd(somma)){
+    let isEven = even(somma);
+    if (isEven == false){
         console.log('Il numero è dispari, hai vinto!')
     }else{
         console.log('Mi dispiace, hai perso :-(')
     }
 
-})
+}
+
+buttonDispari.addEventListener("click", clickDispari);
+// fine dispari
+
