@@ -19,6 +19,7 @@ function generaNumeroRandom(min, max){
 
 
 // inizio funzione per: il numero è pari o dispari?
+
 function even(num){
     const isEven = (num % 2 === 0);
     return isEven;
